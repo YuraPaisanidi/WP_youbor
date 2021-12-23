@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Авторизация</title>
+	<meta name="description" content="youbor.uz">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" href="img/favicon.ico">
+	<!-- <meta property="og:image" content="img/preview.jpg"> -->
+	<link rel="stylesheet" href="css/app.min.css?v=1">
+	<script src="js/app.min.js" defer></script>
+
+</head>
+
+<body class="body--auth">
+
+	<header class="header">
+		<div class="header__container container">
+
+			<div class="header__wrap">
+				<a href="/" class="header__logo">
+					<img src="img/logo.svg" alt="">
+				</a>
+	
+				<div class="header__search">
+					<input type="text" name="search" placeholder="Найдите свою звезду">
+				</div>
+	
+				<div class="header__lang">
+					<div class="header__lang_item">
+						<span>RU</span>
+						<img src="img/arrow.svg" alt="">
+					</div>
+					<ul class="header__lang_submenu">
+						<li>
+							<a href="#">UZ</a>
+						</li>
+					</ul>
+				</div>
+	
+				<a href="" class="header__btn btn">
+					Авторизация
+				</a>
+	
+				<button class="hamburger" type="button">
+					<span class="hamburger__item"></span>
+				</button>
+			</div>
+
+			<div class="header__search header__search--mobile">
+				<input type="text" name="search" placeholder="Найдите свою звезду">
+			</div>
+		</div>
+
+	</header>
+
+	<main class="main main--accent">
+
+		<section class="auth">
+			<div class="auth__container container">
+				<div class="auth__wrap">
+					<div class="auth__links">
+						<a href="#"><span>Вход</span></a>
+						<a href="#" class="active"><span>Регистрация</span></a>
+					</div>
+					<form action="#" class="auth__form">
+						<div class="form__item">
+							<input type="text" class="auth__input form__input _req" placeholder="Имя">
+						</div>
+
+						<div class="form__item">
+							<input type="email" class="auth__input form__input _req" placeholder="Email">
+						</div>
+
+						<div class="form__item">
+							<input type="password" class="auth__input form__input _req" placeholder="Пароль">
+						</div>
+
+						<div class="form__item">
+							<input type="password" class="auth__input form__input _req" placeholder="Подтвердите пароль">
+						</div>
+
+						<div class="form__item">
+							<input class="auth__input form__input _req" type="text" onfocusin="(this.type='date')" onfocusout="(this.type='text')"  id="birthDate" placeholder="День рождения"> 
+						</div>
+
+						<div class="form__item form__item--checkbox">
+							<div class="form__checkbox">
+								<input id="formAgreement1" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
+								<label for="formAgreement1" class="form__checkbox_label"><span>Запомнить меня</span></label>
+							</div>
+						</div>
+
+						<div class="form__btn">
+							<button type="submit" class="auth__btn btn">Регистрация</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+</body>
+</html>
