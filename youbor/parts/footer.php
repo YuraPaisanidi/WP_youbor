@@ -51,19 +51,19 @@
 			<nav class="footer__nav">
 				<ul>
 					<li>
-						<a href="#">Условия/Правила</a>
+						<a href="<?php echo get_home_url(); ?>/uslovija-pravila">Условия/Правила</a>
 					</li>
 					<li>
-						<a href="#">Правила пользования</a>
+						<a href="<?php echo get_home_url(); ?>/pravila-polzovaniju">Правила пользования</a>
 					</li>
 					<li>
-						<a href="#">Конфидециальность</a>
+						<a href="<?php echo get_home_url(); ?>/konfidecialnost">Конфидециальность</a>
 					</li>
 					<li>
-						<a href="#">Политика конфидециальности</a>
+						<a href="<?php echo get_home_url(); ?>/privacy-policy">Политика конфидециальности</a>
 					</li>
 					<li>
-						<a href="#">Пользовательськое соглашение</a>
+						<a href="<?php echo get_home_url(); ?>/polzovatelskoe-soglashenie">Пользовательськое соглашение</a>
 					</li>
 				</ul>
 			</nav>

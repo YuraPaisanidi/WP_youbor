@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			// spaceBetween: 30,
 			loop: true,
 			// effect: 'fade',
-			// autoplay: {
-			// 	delay: 5000,
-			// },
+			autoplay: {
+				delay: 5000,
+			},
 			// pagination: {
 			// 	el: '.hero__pagination',
 			// 	clickable: 'true',

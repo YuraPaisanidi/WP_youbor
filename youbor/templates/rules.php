@@ -1,6 +1,6 @@
 <?php
 	/**
-		* Template name: Политика конфидециальности
+		* Template name: Правила пользования
 	*/
 get_header();
 ?>

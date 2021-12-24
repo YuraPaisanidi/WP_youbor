@@ -381,19 +381,19 @@
 			height: 100vh
 
 		&--1
-			background: url(../img/hero_1.png)
+			// background: url(../img/hero_1.png)
 			background-repeat: no-repeat
 			background-size: cover
 			background-position: center
 
 		&--2
-			background: url(../img/hero_2.png)
+			// background: url(../img/hero_2.png)
 			background-repeat: no-repeat
 			background-size: cover
 			background-position: center
 		
 		&--3
-			background: url(../img/hero_3.png)
+			// background: url(../img/hero_3.png)
 			background-repeat: no-repeat
 			background-size: cover
 			background-position: center
@@ -1198,13 +1198,19 @@
 			padding: 25px
 
 	h3
-		text-transform: none
-		margin-bottom: 20px
+		@extend .h3
 		text-align: center
+		margin-bottom: 20px
 		color: $dark
 
 		span
 			color: $accent2
+	
+	p
+		margin-bottom: 15px
+
+	strong
+		color: $dark
 
 	&__text
 		max-height: 520px
@@ -1548,3 +1554,86 @@
 
 			&__content
 				opacity: 1
+
+//----------------PRIVACY POLICY---------------
+.policy
+	display: flex
+	align-items: flex-start
+	justify-content: center
+	padding: 30px 0
+
+	&__container
+		display: flex
+		flex-direction: column
+		max-width: 1200px
+
+	h1
+		@extend .h1
+		margin-bottom: 20px
+		color: $dark
+
+	h2,h3,h4
+		margin-bottom: 10px
+		color: $dark
+
+	h5
+		// color: $title
+		font-size: 22px
+		text-align: center
+		font-weight: 700
+		max-width: 590px
+		align-self: center
+		margin-bottom: 25px
+
+	h6
+		text-align: center
+		font-weight: 700
+		font-size: 32px
+		color: $accent
+		margin-top: 30px
+		max-width: 590px
+		align-self: center
+
+
+		+r(576)
+			font-size: 24px
+
+	p
+		margin-bottom: 20px
+		word-break: break-word
+
+	ul,
+	ol,
+		padding-left: 30px
+		margin-bottom: 20px
+
+	ul
+		list-style-type: disc
+
+	blockquote
+		padding: 0 45px
+		margin: 15px 0
+
+		+r(480)
+			padding: 0 25px
+
+		p
+			margin-bottom: 10px
+			font-style: italic
+
+	cite
+		font-weight: 600
+
+	figure
+		text-align: center
+		display: block
+
+	a
+		color: $accent
+		text-decoration: underline
+
+		&:hover
+			text-decoration: underline
+
+	strong
+		color: $dark

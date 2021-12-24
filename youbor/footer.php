@@ -17,15 +17,33 @@
 
 	<!-- MODAL -->
 
-	<div class="modal" id="modal__edits">
-		<div class="modal__wrap">
+	<?php if( have_rows('modals') ): ?>
+		<?php while( have_rows('modals') ): the_row(); 
+		$modal = get_sub_field('modal');
+		$modal_id = get_sub_field('modal_id');
+		?>
+		<div class="modal" id="<?php echo $modal_id; ?>">
+			<div class="modal__wrap">
+				<button class="close modal__close" type="button">
+					<span></span>
+					<span></span>
+				</button>
 
-			<button class="close modal__close" type="button">
-				<span></span>
-				<span></span>
-			</button>
+				<div class="modal__text">
+					<?php echo $modal; ?>
+				</div>
 
-			<h3 class="h3 modal__title">Что такое <span>youbor?</span></h3>
+
+				
+			</div>
+		</div>
+
+		<?php endwhile; ?>
+	<?php endif; ?>
+
+
+
+			<!-- <h3 class="h3 modal__title">Что такое <span>youbor?</span></h3>
 
 			<div class="modal__text">
 				<p class="modal__subtitle">
@@ -95,10 +113,8 @@
 					Как подарить – дело фантазии. Можете отправить по, Telegram или Whatsapp, 
 					а можете в разгар праздника включить на большом
 				</p>
-			</div>
+			</div> -->
 
-		</div>
-	</div>
 
 </body>
 </html>

@@ -7,28 +7,28 @@
 <main class="main main--index">
 		
 	<section class="hero">
-		<div class="swiper hero__slider heroSlider">
-			<div class="swiper-wrapper hero__wrapper heroWrapper">
-				<div class="swiper-slide hero__slide hero__slide--1 heroSlide">
-					<div class="hero__text">
-						<h1 class="h1 hero__title">Что такое <span>youbor?</span></h1>
-						<a href="#" class="hero__btn btn modal__edits">Узнать</a>
+
+		<?php if( have_rows('hero_slider') ): ?>
+			<div class="swiper hero__slider heroSlider">
+				<div class="swiper-wrapper hero__wrapper heroWrapper">
+					<?php while( have_rows('hero_slider') ): the_row(); 
+					$text = get_sub_field('text');
+					$img = get_sub_field('img');
+					$modal_id = get_sub_field('modal_id');
+					?>
+
+					<div class="swiper-slide hero__slide hero__slide--1 heroSlide" style="background-image:url(<?php echo $img; ?>)">
+						<div class="hero__text">
+							<h1 class="h1 hero__title"><?php echo $text; ?></h1>
+							<a href="#" class="hero__btn btn <?php echo $modal_id; ?>">Узнать</a>
+						</div>
 					</div>
-				</div>
-				<div class="swiper-slide hero__slide hero__slide--2 heroSlide">
-					<div class="hero__text">
-						<h1 class="h1 hero__title">Youbor добро</span></h1>
-						<a href="#" class="hero__btn btn modal__edits">Узнать</a>
-					</div>
-				</div>
-				<div class="swiper-slide hero__slide hero__slide--3 heroSlide">
-					<div class="hero__text">
-						<h1 class="h1 hero__title">Будь ближе к звезде</span></h1>
-						<a href="#" class="hero__btn btn modal__edits">Узнать</a>
-					</div>
+
+					<?php endwhile; ?>
 				</div>
 			</div>
-		</div>
+		<?php endif; ?>
+
 	</section>
 
 	<section class="celeb">
