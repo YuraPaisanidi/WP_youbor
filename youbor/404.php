@@ -10,51 +10,57 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<header class="header header--dark">
+	<div class="header__container container">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'youbor' ); ?></h1>
-			</header><!-- .page-header -->
+		<div class="header__wrap">
+			<a href="/" class="header__logo">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="">
+			</a>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'youbor' ); ?></p>
+			<div class="header__search">
+				<input type="text" name="search" placeholder="Найдите свою звезду">
+			</div>
 
-					<?php
-					get_search_form();
+			<div class="header__lang">
+				<div class="header__lang_item">
+					<span>RU</span>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow.svg" alt="">
+				</div>
+				<ul class="header__lang_submenu">
+					<li>
+						<a href="#">UZ</a>
+					</li>
+				</ul>
+			</div>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+			<a href="" class="header__btn btn">
+				Авторизация
+			</a>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'youbor' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
+			<button class="hamburger" type="button">
+				<span class="hamburger__item"></span>
+			</button>
+		</div>
 
-					<?php
-					/* translators: %1$s: smiley */
-					$youbor_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'youbor' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$youbor_archive_content" );
+		<div class="header__search header__search--mobile">
+			<input type="text" name="search" placeholder="Найдите свою звезду">
+		</div>
+	</div>
+</header>
 
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+<section class="error404">
+	<div class="container">
 
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+		<div class="error404__description">
+			<h1 class="error404__title h1"><?php esc_html_e( 'Cтраница не найдена "404"', 'schoolstudy' ); ?></h1>
+			<div class="error404__btn">
+				<a href="<?php echo get_home_url(); ?>">На главную</a>
+			</div>
+		</div>
 
-	</main><!-- #main -->
+	</div>
+</section>
 
 <?php
 get_footer();

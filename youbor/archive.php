@@ -1,50 +1,228 @@
-<?php
-/**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package youbor
- */
+<?php get_header(); ?>
 
-get_header();
-?>
+<header class="header header--dark">
+	<div class="header__container container">
 
-	<main id="primary" class="site-main">
+		<div class="header__wrap">
+			<a href="/" class="header__logo">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="">
+			</a>
 
-		<?php if ( have_posts() ) : ?>
+			<div class="header__search">
+				<input type="text" name="search" placeholder="Найдите свою звезду">
+			</div>
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+			<div class="header__lang">
+				<div class="header__lang_item">
+					<span>RU</span>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow.svg" alt="">
+				</div>
+				<ul class="header__lang_submenu">
+					<li>
+						<a href="#">UZ</a>
+					</li>
+				</ul>
+			</div>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			<a href="" class="header__btn btn">
+				Авторизация
+			</a>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+			<button class="hamburger" type="button">
+				<span class="hamburger__item"></span>
+			</button>
+		</div>
 
-			endwhile;
+		<div class="header__search header__search--mobile">
+			<input type="text" name="search" placeholder="Найдите свою звезду">
+		</div>
+	</div>
+</header>
 
-			the_posts_navigation();
+	<main class="main">
 
-		else :
+		<section class="blog">
+			<div class="blog__container container">
+				<h3 class="h3 blog__title">Блог</h3>
+				<div class="blog__wrap">
 
-			get_template_part( 'template-parts/content', 'none' );
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		endif;
-		?>
+					<a href="<?php the_permalink() ?>" class="blog__item">
+						<div class="blog__item_date">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pencil.svg" alt="">
+							<p><?php the_time('d/m/Y'); ?></p>
+						</div>
 
-	</main><!-- #main -->
+						<div class="blog__item_img">
+							<img src="<?php the_post_thumbnail_url(); ?>" alt="">
+						</div>
+
+						<div class="blog__item_title">
+							<h3>
+								<?php the_title() ?>
+							</h3>
+						</div>
+
+						<div class="blog__item_desc">
+							<p>
+								<?php the_excerpt() ?>
+							</p>
+						</div>
+					</a>
+
+				<?php endwhile; ?>
+				<?php endif; ?>
+					<!-- <a href="#" class="blog__item">
+						<div class="blog__item_date">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pencil.svg" alt="">
+							<p>22/05/2021</p>
+						</div>
+	
+						<div class="blog__item_img">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog.jpg" alt="">
+						</div>
+	
+						<div class="blog__item_title">
+							<h3>
+								Nulla morbi mus duis velit arcu. Maecenas id diam suspendisse id faucibus non.
+							</h3>
+						</div>
+	
+						<div class="blog__item_desc">
+							<p>
+								Ornare duis purus lacus, neque habitant. Lorem nec pretium, ante
+								in suspendisse ante. Viverra vel sed at vitae nunc at ac in gravida.
+								Lorem lacus lectus tristique sed. Habitasse non eget duis arcu sagittis.
+							</p>
+						</div>
+					</a>
+					<a href="#" class="blog__item">
+						<div class="blog__item_date">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pencil.svg" alt="">
+							<p>22/05/2021</p>
+						</div>
+	
+						<div class="blog__item_img">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog.jpg" alt="">
+						</div>
+	
+						<div class="blog__item_title">
+							<h3>
+								Nulla morbi mus duis velit arcu. Maecenas id diam suspendisse id faucibus non.
+							</h3>
+						</div>
+	
+						<div class="blog__item_desc">
+							<p>
+								Ornare duis purus lacus, neque habitant. Lorem nec pretium, ante
+								in suspendisse ante. Viverra vel sed at vitae nunc at ac in gravida.
+								Lorem lacus lectus tristique sed. Habitasse non eget duis arcu sagittis.
+							</p>
+						</div>
+					</a>
+					<a href="#" class="blog__item">
+						<div class="blog__item_date">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pencil.svg" alt="">
+							<p>22/05/2021</p>
+						</div>
+	
+						<div class="blog__item_img">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog.jpg" alt="">
+						</div>
+	
+						<div class="blog__item_title">
+							<h3>
+								Nulla morbi mus duis velit arcu. Maecenas id diam suspendisse id faucibus non.
+							</h3>
+						</div>
+	
+						<div class="blog__item_desc">
+							<p>
+								Ornare duis purus lacus, neque habitant. Lorem nec pretium, ante
+								in suspendisse ante. Viverra vel sed at vitae nunc at ac in gravida.
+								Lorem lacus lectus tristique sed. Habitasse non eget duis arcu sagittis.
+							</p>
+						</div>
+					</a>
+					<a href="#" class="blog__item">
+						<div class="blog__item_date">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pencil.svg" alt="">
+							<p>22/05/2021</p>
+						</div>
+	
+						<div class="blog__item_img">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog.jpg" alt="">
+						</div>
+	
+						<div class="blog__item_title">
+							<h3>
+								Nulla morbi mus duis velit arcu. Maecenas id diam suspendisse id faucibus non.
+							</h3>
+						</div>
+	
+						<div class="blog__item_desc">
+							<p>
+								Ornare duis purus lacus, neque habitant. Lorem nec pretium, ante
+								in suspendisse ante. Viverra vel sed at vitae nunc at ac in gravida.
+								Lorem lacus lectus tristique sed. Habitasse non eget duis arcu sagittis.
+							</p>
+						</div>
+					</a>
+					<a href="#" class="blog__item">
+						<div class="blog__item_date">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pencil.svg" alt="">
+							<p>22/05/2021</p>
+						</div>
+	
+						<div class="blog__item_img">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog.jpg" alt="">
+						</div>
+	
+						<div class="blog__item_title">
+							<h3>
+								Nulla morbi mus duis velit arcu. Maecenas id diam suspendisse id faucibus non.
+							</h3>
+						</div>
+	
+						<div class="blog__item_desc">
+							<p>
+								Ornare duis purus lacus, neque habitant. Lorem nec pretium, ante
+								in suspendisse ante. Viverra vel sed at vitae nunc at ac in gravida.
+								Lorem lacus lectus tristique sed. Habitasse non eget duis arcu sagittis.
+							</p>
+						</div>
+					</a>
+					<a href="#" class="blog__item">
+						<div class="blog__item_date">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pencil.svg" alt="">
+							<p>22/05/2021</p>
+						</div>
+	
+						<div class="blog__item_img">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog.jpg" alt="">
+						</div>
+	
+						<div class="blog__item_title">
+							<h3>
+								Nulla morbi mus duis velit arcu. Maecenas id diam suspendisse id faucibus non.
+							</h3>
+						</div>
+	
+						<div class="blog__item_desc">
+							<p>
+								Ornare duis purus lacus, neque habitant. Lorem nec pretium, ante
+								in suspendisse ante. Viverra vel sed at vitae nunc at ac in gravida.
+								Lorem lacus lectus tristique sed. Habitasse non eget duis arcu sagittis.
+							</p>
+						</div>
+					</a> -->
+				</div>
+				<a href="#" class="blog__btn btn">Больше</a>
+			</div>
+		</section>
+
+	</main>
 
 <?php
 get_sidebar();
