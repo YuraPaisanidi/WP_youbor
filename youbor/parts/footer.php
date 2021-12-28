@@ -8,10 +8,10 @@
 			<nav class="footer__nav footer__nav--left">
 				<ul>
 					<li>
-						<a href="#">Новости</a>
+						<a href="<?php echo get_home_url(); ?>/news">Новости</a>
 					</li>
 					<li>
-						<a href="#">Акции</a>
+						<a href="<?php echo get_home_url(); ?>/action">Акции</a>
 					</li>
 					<li>
 						<a href="#">Обновления</a>
@@ -20,7 +20,7 @@
 						<a href="#">Помощь</a>
 					</li>
 					<li>
-						<a href="#">FAQ</a>
+						<a href="<?php echo get_home_url(); ?>/populjarnye-voprosy">FAQ</a>
 					</li>
 				</ul>
 			</nav>
