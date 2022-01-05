@@ -636,6 +636,7 @@
 		display: flex
 		width: 100%
 		overflow: hidden
+		height: 285px
 
 		img
 			width: 100%
@@ -806,10 +807,12 @@
 			gap: 15px
 
 	&__img
-		max-width: 280px
-		max-height: 380px
-		width: 100%
-		height: 100%
+		// max-width: 280px
+		// max-height: 380px
+		// width: 100%
+		// height: 100%
+		width: 280px
+		height: 380px
 		border-radius: 5px
 		overflow: hidden
 
@@ -867,6 +870,7 @@
 		+r(767)
 			align-items: center
 			justify-content: center
+
 
 .other
 	padding-bottom: 80px
@@ -1439,7 +1443,6 @@
 		margin-bottom: 10px
 
 
-
 .form
 	position: relative
 	max-width: 500px
@@ -1679,7 +1682,7 @@
 				max-width: 50%
 
 
-.swiper 
+.swiper
 	width: 100%
 	height: 100%
 
@@ -1869,4 +1872,55 @@
 				color: $accent2
 				border-bottom: 1px solid $accent2
 
+.badge
 
+	&__wrap
+		position: absolute
+		top: 0
+		right: 0
+		display: flex
+		flex-wrap: wrap
+		gap: 12px
+		row-gap: 5px
+		background: transparent
+		z-index: 10
+		padding: 10px
+
+		span
+			padding: 0 10px
+			height: 20px
+			display: flex
+			align-items: center
+			justify-content: center
+			background: $accent
+			border-radius: 5px
+			color: #fff
+			font-weight: 700
+			padding-top: 2px
+
+			&.color--1
+				background: $accent
+
+			&.color--2
+				background: linear-gradient(115.95deg, rgba(239, 239, 239, 0.294) 10.92%, rgba(255, 255, 255, 0.0392) 96.4%)
+				backdrop-filter: blur(65.9315px)
+//-------------------------WOOCOMMERCE------------
+.price
+	@extend .person__price
+
+.button
+	@extend .btn
+
+.products
+	@extend .other__content
+
+.attachment-woocommerce_thumbnail
+	@extend .star__img
+
+.woocommerce-product-gallery__image
+	@extend .person__img
+
+	img
+		object-fit: cover !important
+		width: 100% !important
+		height: 100% !important

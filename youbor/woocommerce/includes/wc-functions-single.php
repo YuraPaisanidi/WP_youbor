@@ -34,6 +34,20 @@ function description() {
     }
   }
 
+	// ----------------------------------------Add role-----------------------------------------
+	// remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+	add_action( 'woocommerce_single_product_summary', 'single_product_role', 5);
+
+	function single_product_role() {
+		?>
+
+		<p class="person__prof">
+			<?php the_field('role'); ?>
+		</p>
+
+		<?php
+	}
+
 	//-----------------------------------Product price--------------
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price',  10 );
 	add_action( 'woocommerce_after_add_to_cart_quantity', 'woocommerce_template_single_price', 30 );

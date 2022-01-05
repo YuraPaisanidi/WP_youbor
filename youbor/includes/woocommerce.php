@@ -114,8 +114,8 @@ add_filter('loop_shop_columns', 'project_woocommerce_loop_columns');
 function project_woocommerce_related_products_args($args)
 {
 	$defaults = array(
-		'posts_per_page' => 3,
-		'columns'        => 3,
+		'posts_per_page' => 4,
+		'columns'        => 4,
 	);
 
 	$args = wp_parse_args($defaults, $args);
