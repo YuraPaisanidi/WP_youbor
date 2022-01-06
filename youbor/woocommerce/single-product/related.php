@@ -21,6 +21,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $related_products ) : ?>
 
+	<?php if( have_rows('video_galery') ): ?>
+		<?php while( have_rows('video_galery') ): the_row(); 
+		$video = get_sub_field('video');
+		?>
+			<iframe width="640" height="360" src="<?php echo $video; ?>" frameborder="0" scrolling="no" allowfullscreen></iframe>
+		<?php endwhile; ?>
+	<?php endif; ?>
+
 	<section class="other">
 		<div class="other__container container">
 

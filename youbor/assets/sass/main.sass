@@ -671,6 +671,7 @@
 	&__btn
 		max-width: 135px
 		width: 100%
+		margin-top: 40px
 
 .footer
 	padding: 35px 0
@@ -1905,8 +1906,15 @@
 				background: linear-gradient(115.95deg, rgba(239, 239, 239, 0.294) 10.92%, rgba(255, 255, 255, 0.0392) 96.4%)
 				backdrop-filter: blur(65.9315px)
 //-------------------------WOOCOMMERCE------------
+.woocommerce
+	width: 100%
+
+.columns-3
+	padding-bottom: 60px
+
 .price
 	@extend .person__price
+	color: $accent2 !important
 
 .button
 	@extend .btn
@@ -1924,3 +1932,60 @@
 		object-fit: cover !important
 		width: 100% !important
 		height: 100% !important
+
+.woocommerce-ordering
+	display: none !important
+
+//--------------------------Ajax filter-----------
+.bapf
+
+	&_head
+		display: none
+
+	&_body
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-top: 20px
+
+		ul
+			@extend .star__filter
+
+			li
+
+				label
+					height: 35px
+					padding: 0 15px
+					background: $light
+					font-weight: 700
+					border-radius: 5px
+					display: flex !important
+					align-items: center
+					justify-content: center
+					margin-bottom: 0
+					color: $text
+
+					+r(767)
+						padding: 0 7px
+
+					+r(480)
+						font-size: 12px
+						height: 25px
+
+					&:hover
+						cursor: pointer
+
+				&.checked
+
+					label
+						color: #fff
+						background: $accent
+
+//--------------------------Load more-----------
+.lmp_button
+	display: flex !important
+	justify-content: center !important
+	align-items: center !important
+	margin: 0 auto !important
+	margin-top: 40px !important
+	+transition
