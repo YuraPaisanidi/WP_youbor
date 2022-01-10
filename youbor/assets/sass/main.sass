@@ -25,6 +25,9 @@
 	+r(767)
 		font-size: 32px
 
+	&.hidden
+		display: none
+
 .h2
 	font-size: 36px
 	font-weight: 700
@@ -680,6 +683,9 @@
 	+r(767)
 		padding: 20px 0
 
+	&.hidden
+		display: none
+
 	&__container
 		display: flex
 		flex-direction: column
@@ -974,9 +980,10 @@
 			justify-content: center
 			position: relative
 			padding: 0 10px
-			color: $text
+			color: $text !important
 			font-size: 24px
 			font-weight: 700
+			text-decoration: none !important
 
 			+r(576)
 				font-size: 18px
@@ -992,7 +999,7 @@
 				+transition
 
 			&.active
-				color: $dark
+				color: $dark !important
 
 				&::after
 					background: $accent
@@ -1001,9 +1008,11 @@
 		display: flex
 		flex-direction: column
 		align-items: center
+		gap: 10px
 
 	&__btn
 		min-width: 135px
+		margin-bottom: 15px
 
 //-----------------------Profile----------------
 .profile
@@ -1763,6 +1772,9 @@
 	justify-content: center
 	padding: 30px 0
 
+	&--accent
+		background: $accent
+
 	&__container
 		display: flex
 		flex-direction: column
@@ -1936,6 +1948,30 @@
 .woocommerce-ordering
 	display: none !important
 
+.input-text
+	@extend .form__input
+
+.woocommerce-form-row
+	width: 100%
+
+.show-password-input
+	display: none
+
+.woocommerce-form-login__rememberme
+	margin-bottom: 15px
+
+	input
+		border: 2px solid $accent !important
+
+	span
+		color: $dark !important
+
+.woocommerce-LostPassword
+	a
+		color: $text
+		text-decoration: none
+
+
 //--------------------------Ajax filter-----------
 .bapf
 
@@ -1989,3 +2025,39 @@
 	margin: 0 auto !important
 	margin-top: 40px !important
 	+transition
+
+//------------------------------Ultimate member-----------
+#user_login-180,
+#user_email-180,
+#birth_date-180,
+#user_password-180,
+#confirm_user_password-180
+		width: 100% !important
+		height: 50px !important
+		line-height: 50px !important
+		padding: 0 20px !important
+		background: $light !important
+		color: $dark !important
+		border-radius: 5px !important
+		border-color: transparent !important
+		border: 2px solid transparent !important
+
+		&::placeholder
+			font-size: 16px !important
+			color: $text !important
+
+		&:focus
+			border: 2px solid $accent !important
+	
+.um-right
+	display: none
+
+.um-col-alt
+	display: flex
+	align-items: center
+	justify-content: center
+
+#um-submit-btn
+	@extend .btn
+	@extend .auth__btn
+	height: 50px !important

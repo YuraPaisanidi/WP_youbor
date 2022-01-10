@@ -17,5 +17,3 @@
 
 <body>
 
-	<?php get_template_part( 'parts/header' ); ?>
-

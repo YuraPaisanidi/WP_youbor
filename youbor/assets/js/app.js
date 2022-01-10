@@ -363,4 +363,26 @@ document.addEventListener("DOMContentLoaded", function() {
 	accordions('.accordion');
 
 
+	const checkPageUrl = () => {
+		const pageUrl = window.location.href;
+		if(pageUrl.includes('login')) {
+			// document.querySelector('.policy').classList.add('policy--accent');
+			
+			document.querySelector('.footer').classList.add('hidden');
+			document.querySelector('body').classList.add('body--auth');
+		}
+		if(pageUrl.includes('registracija')) {
+			document.querySelector('.footer').classList.add('hidden');
+			document.querySelector('body').classList.add('body--auth');
+		}
+		if(pageUrl.includes('my-account')) {
+			document.querySelector('.h1').classList.add('hidden');
+			document.querySelector('.footer').classList.add('hidden');
+			document.querySelector('body').classList.add('body--auth');
+		}
+	}
+
+	checkPageUrl();
+
+
 });
