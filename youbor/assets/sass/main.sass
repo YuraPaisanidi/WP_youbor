@@ -67,40 +67,49 @@
 			color: $text
 
 .sidebar
-	display: flex
-	flex-direction: column
-	gap: 15px
 
-	+r(992)
-		display: grid
-		grid-template-columns: 1fr 1fr 1fr
-
-	+r(576)
-		gap: 5px
-
-	+r(480)
-		grid-template-columns: 1fr
-
-	a
-		height: 50px
+	ul
+		list-style-type: none !important
 		display: flex
-		align-items: center
-		background: $light
-		padding-left: 25px
-		border-radius: 5px
-		font-weight: 700
-		color: $dark
+		flex-direction: column
+		gap: 15px
+		padding-left: 0 !important
 
 		+r(992)
-			justify-content: center
-			padding-left: 0
+			display: grid
+			grid-template-columns: 1fr 1fr 1fr
 
 		+r(576)
-			font-size: 14px
+			gap: 5px
 
-		&.active
-			background: $accent2
-			color: #fff
+		+r(480)
+			grid-template-columns: 1fr
+
+		a
+			height: 50px
+			display: flex
+			align-items: center
+			background: $light
+			padding-left: 25px
+			border-radius: 5px
+			font-weight: 700
+			text-decoration: none
+			color: $dark
+
+			+r(992)
+				justify-content: center
+				padding-left: 0
+
+			+r(576)
+				font-size: 14px
+
+		li
+
+			&.is-active
+
+				a
+					background: $accent2
+					color: #fff
 
 // -----BUTTON-----
 .btn
@@ -1113,6 +1122,13 @@
 	&__label
 		font-size: 12px
 		margin-bottom: 0
+	
+	&__btn
+
+		&_wrap
+			display: flex
+			align-items: flex-end
+			justify-content: flex-end
 
 //-----------------------Stars----------------
 .stars
@@ -2061,3 +2077,7 @@
 	@extend .btn
 	@extend .auth__btn
 	height: 50px !important
+
+//--------------------------TI Wishlist------------
+.tinvwl-loop-button-wrapper
+	display: none

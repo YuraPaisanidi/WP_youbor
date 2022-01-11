@@ -5,3 +5,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require get_template_directory() . '/woocommerce/includes/wc-functions-single.php';
 require get_template_directory() . '/woocommerce/includes/wc-functions-archive.php';
+require get_template_directory() . '/woocommerce/includes/wc-functions-account.php';

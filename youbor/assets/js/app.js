@@ -375,11 +375,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			document.querySelector('.footer').classList.add('hidden');
 			document.querySelector('body').classList.add('body--auth');
 		}
-		if(pageUrl.includes('my-account')) {
-			document.querySelector('.h1').classList.add('hidden');
-			document.querySelector('.footer').classList.add('hidden');
-			document.querySelector('body').classList.add('body--auth');
-		}
+		// if(pageUrl.includes('my-account')) {
+		// 	document.querySelector('.h1').classList.add('hidden');
+		// 	document.querySelector('.footer').classList.add('hidden');
+		// 	document.querySelector('body').classList.add('body--auth');
+		// }
 	}
 
 	checkPageUrl();

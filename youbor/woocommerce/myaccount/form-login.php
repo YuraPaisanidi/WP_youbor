@@ -32,8 +32,8 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 				<div class="auth__wrap">
 
 					<div class="auth__links">
-						<a href="#" class="active"><span>Вход</span></a>
-						<a href="#"><span>Регистрация</span></a>
+						<a href="<?php echo get_home_url(); ?>/login" class="active"><span>Вход</span></a>
+						<a href="<?php echo get_home_url(); ?>/registracija"><span>Регистрация</span></a>
 					</div>
 
 					<form class="auth__form" method="post">

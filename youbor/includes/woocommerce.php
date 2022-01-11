@@ -366,5 +366,12 @@ if (!function_exists('project_woocommerce_wrapper_before')) {
 	}
 
 
+add_filter('add_to_cart_redirect', 'tb_skip_cart_page');
+function tb_skip_cart_page () {
+ global $woocommerce;
+ $redirect_checkout = $woocommerce->cart->get_checkout_url();
+ return $redirect_checkout;
+}
+
 
 
