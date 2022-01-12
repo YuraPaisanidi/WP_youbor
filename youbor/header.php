@@ -10,7 +10,8 @@
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.ico">
 	<link rel="stylesheet" href="css/app.min.css?v=1">
 	<script src="js/app.min.js" defer></script>
-
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
+	
 	<?php wp_head(); ?>
 
 </head>
