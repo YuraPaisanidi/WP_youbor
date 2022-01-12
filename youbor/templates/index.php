@@ -13,7 +13,7 @@
 			</a>
 
 			<div class="header__search">
-				<input type="text" name="search" placeholder="Найдите свою звезду">
+				<?php echo do_shortcode( '[aws_search_form]' ); ?>
 			</div>
 
 			<div class="header__lang">
@@ -38,7 +38,7 @@
 		</div>
 
 		<div class="header__search header__search--mobile">
-			<input type="text" name="search" placeholder="Найдите свою звезду">
+			<?php echo do_shortcode( '[aws_search_form]' ); ?>
 		</div>
 	</div>
 

@@ -276,6 +276,18 @@
 			+r(767)
 				display: block
 
+		.aws-container .aws-search-form *
+			border-radius: 5px !important
+
+		.aws-search-clear,
+		.aws-loader
+			margin-right: 40px !important
+
+		.aws-search-clear
+
+			span
+				padding-top: 3px
+
 		input
 			height: 50px
 			width: 100%
@@ -285,6 +297,7 @@
 			background-repeat: no-repeat
 			background-position: 97% 50%
 			border: none
+			font-size: 16px !important
 
 			+r(767)
 				height: 40px
@@ -798,6 +811,14 @@
 	align-items: center
 	gap: 110px
 
+	+r(992)
+		gap: 30px
+
+	+r(767)
+		flex-direction: column
+		gap: 20px
+		padding: 30px
+
 	+r(576)
 		margin-bottom: 30px
 
@@ -833,7 +854,8 @@
 		overflow: hidden
 
 		+r(767)
-			width: 150px
+			height: 250px
+			width: auto
 
 		img
 			object-fit: cover
@@ -887,7 +909,43 @@
 			align-items: center
 			justify-content: center
 
+	.cart
 
+		+r(767)
+			display: flex
+			flex-direction: column
+			align-items: center
+
+	.tinv-wraper
+
+		+r(767)
+			display: flex
+			align-items: center
+			justify-content: center
+
+.video
+
+	&__title
+		@extend .other__title
+
+	&__wrap
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr 1fr
+		gap: 20px
+		margin-bottom: 50px
+
+		+r(992)
+			grid-template-columns: 1fr 1fr
+
+		+r(576)
+			grid-template-columns: 1fr
+
+	&__item
+		height: 385px
+
+		iframe
+			width: 100%
+			height: 100%
 .other
 	padding-bottom: 80px
 
