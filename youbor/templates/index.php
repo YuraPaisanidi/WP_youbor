@@ -28,9 +28,22 @@
 				</ul>
 			</div>
 
-			<a href="#" class="header__btn btn">
-				Авторизация
-			</a>
+			<div class="header__auth">
+				<a href="<?php echo get_home_url(); ?>/login" class="header__btn header__btn--auth btn">
+					Авторизация
+				</a>
+				<a href="<?php echo get_home_url(); ?>/my-account" class="header__btn header__btn--profile btn hidden">
+					Мой аккаунт
+				</a>
+				<?php 
+					wp_nav_menu( array(
+						'menu'=>'user_menu',
+						'menu_class'=>'header__auth_submenu',
+							'theme_location'=>'menu',
+					) );
+				?>
+			</div>
+	
 
 			<button class="hamburger" type="button">
 				<span class="hamburger__item"></span>
@@ -111,67 +124,6 @@
 			</div>
 		</section>
 	<?php endif; ?>
-
-
-					<!-- <div class="swiper-slide celeb__slide celebSlide">
-						<div class="celeb__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/celeb.jpg" alt="">
-						</div>
-						<p class="celeb__name">
-							Александра<br> Сергеева
-						</p>
-					</div>
-					<div class="swiper-slide celeb__slide celebSlide">
-						<div class="celeb__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/celeb.jpg" alt="">
-						</div>
-						<p class="celeb__name">
-							Александра<br> Сергеева
-						</p>
-					</div>
-					<div class="swiper-slide celeb__slide celebSlide">
-						<div class="celeb__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/celeb.jpg" alt="">
-						</div>
-						<p class="celeb__name">
-							Александра<br> Сергеева
-						</p>
-					</div>
-					<div class="swiper-slide celeb__slide celebSlide">
-						<div class="celeb__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/celeb.jpg" alt="">
-						</div>
-						<p class="celeb__name">
-							Александра<br> Сергеева
-						</p>
-					</div>
-					<div class="swiper-slide celeb__slide celebSlide">
-						<div class="celeb__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/celeb.jpg" alt="">
-						</div>
-						<p class="celeb__name">
-							Александра<br> Сергеева
-						</p>
-					</div>
-					<div class="swiper-slide celeb__slide celebSlide">
-						<div class="celeb__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/celeb.jpg" alt="">
-						</div>
-						<p class="celeb__name">
-							Александра<br> Сергеева
-						</p>
-					</div>
-					<div class="swiper-slide celeb__slide celebSlide">
-						<div class="celeb__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/celeb.jpg" alt="">
-						</div>
-						<p class="celeb__name">
-							Александра<br> Сергеева
-						</p>
-					</div> -->
-
-
-			
 
 
 	<section class="star">

@@ -385,4 +385,14 @@ document.addEventListener("DOMContentLoaded", function() {
 	checkPageUrl();
 
 
+	const userAuthCheck = () => {
+		if(document.querySelector('.header__auth_submenu')) {
+			document.querySelector('.header__btn--auth').classList.add('hidden');
+			document.querySelector('.header__btn--profile').classList.remove('hidden');
+		}
+	}
+
+	userAuthCheck();
+
+
 });
