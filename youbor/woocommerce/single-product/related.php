@@ -22,10 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( $related_products ) : ?>
 
 
-	<section class="video">
-		<h3 class="h3 video__title">Лучшие видео</h3>
-		<div class="video__wrap">
-			<?php if( have_rows('video_galery') ): ?>
+	<?php if( have_rows('video_galery') ): ?>
+		<section class="video">
+			<h3 class="h3 video__title">Лучшие видео</h3>
+			<div class="video__wrap">
 				<?php while( have_rows('video_galery') ): the_row(); 
 				$video = get_sub_field('video');
 				?>
@@ -33,9 +33,9 @@ if ( $related_products ) : ?>
 						<iframe width="640" height="360" src="<?php echo $video; ?>" frameborder="0" scrolling="no" allowfullscreen></iframe>
 					</div>
 				<?php endwhile; ?>
-			<?php endif; ?>
-		</div>
-	</section>
+			</div>
+		</section>
+	<?php endif; ?>
 
 
 	<section class="other">

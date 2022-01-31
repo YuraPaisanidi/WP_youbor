@@ -378,6 +378,7 @@ if (!function_exists('project_woocommerce_wrapper_before')) {
 	}
 
 
+//-----------Redirect to checkout without cart page---------
 add_filter('add_to_cart_redirect', 'tb_skip_cart_page');
 function tb_skip_cart_page () {
  global $woocommerce;
@@ -385,5 +386,34 @@ function tb_skip_cart_page () {
  return $redirect_checkout;
 }
 
+//-------------------Disable "Add to cart" notification
+add_filter( 'wc_add_to_cart_message_html', '__return_false' );
 
+
+//----------------------Limit 1 product-------------------
+function custom_maybe_empty_cart( $valid, $product_id, $quantity ) {
+
+	if( ! empty ( WC()->cart->get_cart() ) && $valid ){
+			WC()->cart->empty_cart();
+			// wc_add_notice( 'Only allowed 1 item in cart, please remove previous item.', 'error' );
+	}
+
+	return $valid;
+
+}
+add_filter( 'woocommerce_add_to_cart_validation', 'custom_maybe_empty_cart', 10, 3 );
+
+add_filter( 'woocommerce_enable_order_notes_field', '__return_false', 9999 );
+
+// Remove Order Notes Field
+
+add_filter( 'woocommerce_checkout_fields' , 'njengah_order_notes' );
+
+function njengah_order_notes( $fields ) {
+
+unset($fields['order']['order_comments']);
+
+return $fields;
+
+}
 

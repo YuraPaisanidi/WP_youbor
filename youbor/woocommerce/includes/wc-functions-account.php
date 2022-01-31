@@ -31,3 +31,14 @@ function rename_menu_items( $items ) {
 
     return $items;
 }
+
+//------------------------------Redirect after login-----------------------
+add_filter( 'woocommerce_login_redirect', 'truemisha_login_redirect', 25, 2 );
+ 
+function truemisha_login_redirect( $redirect, $user ) {
+ 
+	$redirect = site_url();
+	return $redirect;
+ 
+}
+

@@ -1,0 +1,13 @@
+FTP:
+Хост: server2.ahost.uz
+Юзер: youboruz
+Пароль: hB888e][kr6BFP
+
+MySQL:
+User: youboruz_youbor
+DB: youboruz_youbor
+Pass: d&;3azsGAW^^
+
+WP:
+Login: Admin
+Pass: KE#DUKstUSsV)kmnyrxr(rIB
