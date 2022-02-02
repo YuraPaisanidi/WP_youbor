@@ -395,4 +395,43 @@ document.addEventListener("DOMContentLoaded", function() {
 	userAuthCheck();
 
 
+
+//--------------Checkout form radio check------------
+	const radioLabelsReason = document.querySelectorAll('#billing_reason_field fieldset label');
+	const radioLabelsDest = document.querySelectorAll('#billing_destination_field fieldset label');
+	const radioLabelsLang = document.querySelectorAll('#billing_language_field label');
+	
+	const checkRadioBtnsReason = () => {
+
+		radioLabelsReason.forEach( e => e.classList.remove('radio-active'));
+
+		if(event.target.checked) {
+			event.target.parentElement.classList.add('radio-active');
+		}
+
+	}
+	radioLabelsReason.forEach( e => e.addEventListener('click', checkRadioBtnsReason ));
+
+	const checkRadioBtnsDest = () => {
+
+		radioLabelsDest.forEach( e => e.classList.remove('radio-active'));
+
+		if(event.target.checked) {
+			event.target.parentElement.classList.add('radio-active');
+		}
+
+	}
+	radioLabelsDest.forEach( e => e.addEventListener('click', checkRadioBtnsDest ));
+
+	const checkRadioBtnsLang = () => {
+
+		radioLabelsLang.forEach( e => e.classList.remove('radio-active'));
+
+		if(event.target.checked) {
+			event.target.parentElement.classList.add('radio-active');
+		}
+
+	}
+	radioLabelsLang.forEach( e => e.addEventListener('click', checkRadioBtnsLang ));
+
 });
