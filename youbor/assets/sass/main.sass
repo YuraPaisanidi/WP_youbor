@@ -105,6 +105,7 @@
 
 		li
 
+			&.current-menu-item,
 			&.is-active
 
 				a
@@ -728,6 +729,10 @@
 
 	&__name
 		color: #fff
+
+		a
+			color: #fff !important
+			text-decoration: none !important
 
 	&__desc
 		font-size: 12px
@@ -2038,24 +2043,40 @@
 				backdrop-filter: blur(65.9315px)
 
 .checkout
-
-	&__wrap
+	max-width: 700px
+	margin: 0 auto
 
 	&__content
 
+	&__wrap
+		max-width: 700px
+		margin: 0 auto
+		padding: 50px
+		background: $light
+		border-radius: 5px
+		color: $dark
+
 		.woocommerce-billing-fields
-			max-width: 700px
-			margin: 0 auto
-			padding: 50px
-			background: $light
-			border-radius: 5px
-			color: $dark
 
-
+			.optional,
+			.required
+				display: none
 
 			.input-text
 				@extend .form__input
 				background: #fff
+
+			#billing_yourname_field
+				display: none
+
+				&.visible
+					display: block !important
+
+			#billing_from_field,
+			#billing_for_field
+				
+				&.hidden
+					display: none
 
 			#billing_destination_field,
 			#billing_language_field
@@ -2135,6 +2156,17 @@
 					resize: none
 					height: 150px
 
+//-------------------------------Favorite----------
+.favorite
+
+	&__wrap
+		@extend .profile__wrap
+	
+	&__content
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr
+		grid-gap: 20px
+
 //-------------------------WOOCOMMERCE------------
 .woocommerce
 	width: 100%
@@ -2188,7 +2220,6 @@
 	a
 		color: $text
 		text-decoration: none
-
 
 //--------------------------Ajax filter-----------
 .bapf

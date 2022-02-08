@@ -434,4 +434,26 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 	radioLabelsLang.forEach( e => e.addEventListener('click', checkRadioBtnsLang ));
 
+
+	
+	const showNecessaryField = () => {
+		const formMeInput = document.querySelector('#billing_destination_me');
+
+		if(formMeInput.checked) {
+			document.querySelector('#billing_yourname_field').classList.add('visible');
+			document.querySelector('#billing_from_field').classList.add('hidden');
+			document.querySelector('#billing_for_field').classList.add('hidden');
+		} else {
+			document.querySelector('#billing_yourname_field').classList.remove('visible');
+			document.querySelector('#billing_from_field').classList.remove('hidden');
+			document.querySelector('#billing_for_field').classList.remove('hidden');
+		}
+	}
+
+	document.querySelectorAll('#billing_destination_other, #billing_destination_me')
+		.forEach(e => e.addEventListener('click', showNecessaryField));
+
+	showNecessaryField();
+
+
 });

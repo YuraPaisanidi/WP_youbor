@@ -29,6 +29,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 ?>
 
+
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
 	<?php if ( $checkout->get_checkout_fields() ) : ?>
@@ -36,6 +37,21 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
 		<div class="checkout__wrap" id="customer_details">
+
+		<div class="checkout__image">
+
+			<!-- <?php 
+				global $woocommerce;
+				foreach ($woocommerce->cart->get_cart() as $item):
+								echo $item['product_id'];
+								
+				endforeach;
+				
+			
+			?> -->
+		</div>
+
+
 			<div class="checkout__content">
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
 			</div>
