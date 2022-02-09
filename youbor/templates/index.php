@@ -134,11 +134,11 @@
 
 			<?php echo do_shortcode( '[br_filter_single filter_id=113]' ); ?>
 
-			<!-- <?php echo do_shortcode( '[product per_page="12"]' ); ?> -->
-			<?php echo do_shortcode( '[products]' ); ?>
+			<?php echo do_shortcode( '[product per_page="12"]' ); ?>
+			<!-- <?php echo do_shortcode( '[products]' ); ?> -->
 
-			<!-- <div class="star__btn btn">Еще</div> -->
-			<?php wptuts_pagination(); ?>
+			<a href="<?php echo get_home_url(); ?>/shop" class="star__btn btn">Смотреть всех</a>
+			<!-- <?php wptuts_pagination(); ?> -->
 		</div>
 	</section>
 	

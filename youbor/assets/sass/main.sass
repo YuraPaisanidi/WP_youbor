@@ -744,7 +744,7 @@
 		color: $accent2
 
 	&__btn
-		max-width: 135px
+		max-width: 140px
 		width: 100%
 		margin-top: 40px
 
@@ -2056,6 +2056,10 @@
 		background: $light
 		border-radius: 5px
 		color: $dark
+		margin-bottom: 30px
+
+		+r(767)
+			padding: 25px
 
 		.woocommerce-billing-fields
 
@@ -2093,19 +2097,14 @@
 				legend
 					margin-bottom: 55px
 
+					+r(576)
+						font-size: 18px
+
 				label
 					position: relative
 
 					&:hover
 						cursor: pointer
-
-					// &::before
-					// 	content: ''
-					// 	position: absolute
-					// 	width: 30px
-					// 	height: 30px
-					// 	top: -25px
-					// 	left: calc( 50% - 15px )
 
 					&.radio-active
 						&::before
@@ -2202,11 +2201,22 @@
 					gap: 45px
 					text-align: center
 
+					+r(767)
+						grid-template-columns: 1fr 1fr 1fr
+
+					+r(480)
+						grid-template-columns: 1fr 1fr
+						grid-column-gap: 30px
+						grid-row-gap: 45px
+
 				abbr
 					visibility: hidden
 
 				legend
 					margin-bottom: 55px
+
+					+r(576)
+						font-size: 18px
 
 				label
 					position: relative
